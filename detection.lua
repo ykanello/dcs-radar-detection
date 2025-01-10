@@ -1,13 +1,7 @@
-This is not started for Decom in 4R
------------------------------------
-Qkassa
-questor for windows
-subcontracting (2025)
-messagebird (3/2025)
-
-
---------------------------------------
-cosmetiqueactive.be/nl - Have you implemented MFA for authentication of Privileged Accounts? - No
-This feature will be available on the new websites that will replace this in October. 
-
----------------------------------------
+local DetectingUnit = Unit.getByName('EWR P19')
+local TargetUnit = Unit.getByName('Viper-1')
+if Controller.isTargetDetected(DetectingUnit , TargetUnit , Radar) == true then
+   trigger.action.outText('detected by Flat Face', 10)
+   trigger.action.setUserFlag( "11", true )
+   mist.grouptoRandomZone('RU QRA',{'QRA Zone1', 'QRA Zone2', 'QRA Zone3'})
+end
